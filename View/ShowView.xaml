@@ -1,0 +1,54 @@
+﻿<Window x:Class="CinemaManagement.View.ShowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ShowView" Height="450" Width="800">
+    <Grid>
+        <Label Content="Danh Sách Lịch Chiếu" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Arial Black"/>
+        <Button Content="Quay Lại" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="80" Click="BackButton_Click"/>
+
+        <StackPanel Orientation="Horizontal" Margin="10,50,10,0" VerticalAlignment="Top">
+            <Button x:Name="AddShowButton" Content="Thêm Lịch Chiếu" Width="120" Click="AddShowButton_Click"/>
+            <Button x:Name="EditShowButton" Content="Chỉnh Sửa" Width="100" Click="EditShowButton_Click" Margin="5,0,0,0"/>
+            <Button x:Name="DeleteShowButton" Content="Xóa" Width="100" Click="DeleteShowButton_Click" Margin="5,0,0,0"/>
+        </StackPanel>
+
+        <DataGrid x:Name="ShowDataGrid" ItemsSource="{Binding Shows}" AutoGenerateColumns="False" Margin="10,90,10,200" SelectionChanged="ShowDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã Lịch Chiếu" Binding="{Binding ShowId}" Width="100"/>
+                <DataGridTextColumn Header="Mã Phòng" Binding="{Binding RoomId}" Width="100"/>
+                <DataGridTextColumn Header="Mã Phim" Binding="{Binding FilmId}" Width="100"/>
+                <DataGridTextColumn Header="Ngày Chiếu" Binding="{Binding ShowDate}" Width="150"/>
+                <DataGridTextColumn Header="Giá" Binding="{Binding Price}" Width="100"/>
+                <DataGridTextColumn Header="Trạng Thái" Binding="{Binding Status}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- TextBoxes for show details -->
+        <StackPanel Orientation="Vertical" Margin="10,0,10,10" VerticalAlignment="Bottom">
+            <Grid Margin="0,0,0,5">
+                <Label Content="Mã Phòng" HorizontalAlignment="Left" VerticalAlignment="Center" Height="28" Margin="2,2,0,0"/>
+                <TextBox x:Name="RoomIDTextBox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="666" Height="22" Margin="90,0,0,0" TextWrapping="Wrap" />
+            </Grid>
+
+            <Grid Margin="0,0,0,5">
+                <Label Content="Mã Phim" HorizontalAlignment="Left" VerticalAlignment="Center" Height="28" Margin="2,2,0,0"/>
+                <TextBox x:Name="FilmIDTextBox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="665" Height="22" Margin="90,0,0,0" TextWrapping="Wrap" />
+            </Grid>
+
+            <Grid Margin="0,0,0,5">
+                <Label Content="Ngày Chiếu" HorizontalAlignment="Left" VerticalAlignment="Center" Height="28" Margin="2,2,0,0"/>
+                <DatePicker x:Name="ShowDatePicker" HorizontalAlignment="Left" VerticalAlignment="Center" Width="664" Height="22" Margin="90,0,0,0"/>
+            </Grid>
+
+            <Grid Margin="0,0,0,5">
+                <Label Content="Giá" HorizontalAlignment="Left" VerticalAlignment="Center" Height="28" Margin="2,2,0,0"/>
+                <TextBox x:Name="PriceTextBox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="663" Height="22" Margin="90,0,0,0" TextWrapping="Wrap" />
+            </Grid>
+
+            <Grid Margin="0,0,0,5">
+                <Label Content="Trạng Thái" HorizontalAlignment="Left" VerticalAlignment="Center" Height="28" Margin="2,2,0,0"/>
+                <TextBox x:Name="StatusTextBox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="663" Height="22" Margin="90,0,0,0" TextWrapping="Wrap" />
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

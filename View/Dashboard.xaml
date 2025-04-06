@@ -1,0 +1,27 @@
+﻿<Window x:Class="CinemaManagement.View.Dashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Dashboard" Height="450" Width="800">
+    <Grid>
+        <!-- Small Logout Button at the Top Right -->
+        <Button x:Name="LogoutButton" Content="Đăng Xuất" HorizontalAlignment="Left" VerticalAlignment="Top"
+                Margin="10,10,0,0" Width="80" Click="Logout_Click"/>
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Hệ Thống Quản Lý Rạp Phim" FontSize="24" FontWeight="Bold" 
+                       HorizontalAlignment="Center" Margin="0,0,0,30"/>
+            <Button x:Name="RoomButton" Content="Danh Sách Phòng Chiếu" Width="250" Height="50" 
+                    Margin="0,10" FontSize="16" Cursor="Hand" 
+                    MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Click="Room_Click"/>
+            <Button x:Name="FilmButton" Content="Danh Sách Phim" Width="250" Height="50" 
+                    Margin="0,10" FontSize="16" Cursor="Hand" 
+                    MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Click="Film_Click"/>
+            <Button x:Name="ShowButton" Content="Lịch Chiếu Phim" Width="250" Height="50" 
+                    Margin="0,10" FontSize="16" Cursor="Hand" 
+                    MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Click="Show_Click"/>
+            <Button x:Name="BookingButton" Content="Đặt Vé" Width="250" Height="50" 
+                    Margin="0,10" FontSize="16" Cursor="Hand" 
+                    MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Click="Booking_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

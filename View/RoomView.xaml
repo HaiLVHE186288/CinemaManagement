@@ -1,0 +1,26 @@
+﻿<Window x:Class="CinemaManagement.View.RoomView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CinemaManagement.View"
+        mc:Ignorable="d"
+        Title="RoomView" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="373*"/>
+            <ColumnDefinition Width="27*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Danh Sách Phòng Chiếu" HorizontalAlignment="Left" Margin="279,10,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Arial Black"/>
+        <Button Content="Quay Lại" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="80" Click="BackButton_Click"/>
+
+        <DataGrid x:Name="RoomDataGrid" AutoGenerateColumns="False" Margin="20,60,20,33" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã Phòng" Binding="{Binding RoomId}" Width="100"/>
+                <DataGridTextColumn Header="Tên Phòng" Binding="{Binding Name}" Width="200"/>
+                <DataGridTextColumn Header="Số Hàng Ghế" Binding="{Binding NumberRows}" Width="100"/>
+                <DataGridTextColumn Header="Số Cột Ghế" Binding="{Binding NumberCols}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
